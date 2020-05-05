@@ -11,10 +11,22 @@ const rl = readline.createInterface({
 });
 
 
-const pigLatin = (word) => {
+const pigLatin = (oldword) => {
+  let vowel = ["a", "e", "i", "o", "u"]
+  for (let i = 0 ; i < vowel.length ; i++) {
+    if (oldword.charAt(0) == vowel[i]){
+      console.log(oldword+"yay");
+    }
+    else if (oldword.charAt(0) !== vowel[i]) {
+      let oldWordArray = oldword.split("");
+      let firstLetter = oldWordArray.shift("");
+      let anotherWord = oldWordArray.push(firstLetter);
+      let newWord = anotherWord + "ay"
 
-  // Your code here
-
+      console.log(newWord)
+      
+    }
+  }
 }
 
 // the first function called in the program to get an input from the user
