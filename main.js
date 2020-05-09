@@ -17,14 +17,14 @@ const pigLatin = (oldword) => {
     if (oldword.charAt(0) == vowel[i]){
       console.log(oldword+"yay");
     }
-    else if (oldword.charAt(0) !== vowel[i]) {
-      let oldWordArray = oldword.split("");
-      let firstLetter = oldWordArray.shift("");
-      let anotherWord = oldWordArray.push(firstLetter);
-      let newWord = anotherWord + "ay"
-
-      console.log(newWord)
-      
+    else if (oldword.charAt(1) == vowel[i] && oldword.charAt(0)) {
+      return oldword.splice(1) + oldword.charAt(0) + "ay";
+    }
+    else if (oldword.charAt(2) == vowel[i] && oldword.charAt(0)) {
+      return oldword.splice(2) + oldword.charAt(0) + oldword.charAt(1) + "ay";
+    }
+    else if (oldword.charAt(3) == vowel[i] && oldword.charAt(0)) {
+      return oldword.splice(3) + oldword.charAt(0) + oldword.charAt(1) + oldword.charAt(2) + "ay";
     }
   }
 }
