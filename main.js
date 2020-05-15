@@ -1,14 +1,14 @@
 'use strict';
 
 // brings in the assert module for unit testing
-const assert = require('assert');
+// const assert = require('assert');
 // brings in the readline module to access the command line
-const readline = require('readline');
+// const readline = require('readline');
 // use the readline module to print out to the command line
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
 
 // const pigLatin = (oldword) => {
@@ -29,7 +29,25 @@ const rl = readline.createInterface({
 //   }
 // }
 
-const pigLatin = (oldword)=>{
+let oldword = document.getElementById("phrase");
+let piggyWord = document.getElementById("output");
+
+document.getElementById("phrase")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("btn").click();
+    }
+});
+
+
+document.getElementById("btn").onclick = function(){
+  console.log("Clicked");
+  piggyWord.value = pigLatin(oldword.value)
+}
+
+const pigLatin = (oldword) => {
+  
   if (oldword.match(/ /)) {
     oldword = oldword.toLowerCase().trim();
   let wordArr = oldword.split(' ');
@@ -45,14 +63,16 @@ const pigLatin = (oldword)=>{
   }
   return translate(oldword);
   }
+
+
   const translate = (oldword) =>{
   let vowels = ["a", "e", "i", "o", "u"]
   let newWord = "";
+
   if (vowels.indexOf(oldword[0]) > -1){
   newWord = oldword + "yay";
   return newWord;
   }
-  
   else{
   let firstLetter = oldword.match(/[aeiou]/);
   let vowel = oldword.indexOf(firstLetter[0]);
@@ -60,6 +80,14 @@ const pigLatin = (oldword)=>{
   return newWord;
   }
   }
+
+  document.getElementById("reset").onclick = function(){
+    console.log("Clicked Reset");
+    document.getElementById("phrase").onfocus(this.value = '');
+    document.getElementById("output").onfocus(this.value = '');
+  }
+
+  
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js

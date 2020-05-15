@@ -4,19 +4,23 @@
     <meta charset="utf-8">
     <title>Pig latin Translator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
   </head>
   <body>
-    <header>
+    <header id="header">
       <h1>Pig Latin Translator</h1>
     </header>
     <hr/>
     <div id="content">
       <label for="phrase">Enter Phrase or Word Here:</label><br>
-      <input type="text" name="phrase" id="phrase"><br>
-      <button onclick="pigLatin()">Pig Out!</button>
-      <div id="translatedContent"></div>
+      <input type="text" name="phrase" id="phrase" placeholder="Enter Word or Words Here" style="text-align: center;" autofocus onfocus = "this.value=''" autocomplete="off"><br>
+      <button id="btn">
+        Pig Out!
+      </button><br>
+      <!-- <div id="translatedContent">Hey</div> -->
+      <input id="output" type="text" placeholder="Your New Words - ALL PIGGED OUT!" style="text-align: center;" onfocus="this.value = ''"><br>
+      <button id="reset">Reset</button>
     </div>
     <hr/>
+    <script src="main.js"></script>
   </body>
 </html>

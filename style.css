@@ -4,9 +4,9 @@ body {
 }
 
 button {
-    width: 100px;
-    height: 25px;
-    font-size: 14px;
+    width: 10rem;
+    height: auto;
+    font-size: 24px;
 }
 
 #content {
@@ -17,4 +17,10 @@ button {
 
 label {
     font-size: 1.5rem;
+}
+
+input {
+    width: 350px;
+    height: auto;
+    font-size: 18px;
 }
